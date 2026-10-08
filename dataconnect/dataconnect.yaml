@@ -1,0 +1,13 @@
+specVersion: "v1"
+serviceId: "cleanup-system-service"
+location: "us-east4"
+schemas:
+  - source: "./schema"
+    datasource:
+      postgresql:
+        database: "cleanup-system-database"
+        cloudSql:
+          instanceId: "cleanup-system-instance"
+          # schemaValidation: "STRICT"     # STRICT mode makes Postgres schema match Data Connect exactly.
+          # schemaValidation: "COMPATIBLE" # COMPATIBLE mode makes Postgres schema compatible with Data Connect.
+connectorDirs: ["./example"]
